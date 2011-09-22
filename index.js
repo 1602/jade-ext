@@ -36,9 +36,9 @@ exports.templateText = function (name, data) {
                 case 'Boolean':
                 form += [
                     '.clearfix',
-                    '  != form.checkbox("' + property.name + '")',
+                    '  != form.label("' + property.name + '")',
                     '  .input',
-                    '    != form.label("' + property.name + '")',
+                    '    != form.checkbox("' + property.name + '")',
                 ].join('\n') + '\n';
                 break;
                 default:
