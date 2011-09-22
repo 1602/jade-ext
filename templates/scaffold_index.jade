@@ -9,5 +9,7 @@
       != link_to('Delete', path_to.model(model), {class: 'btn danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'})
 - });
 
+hr
+
 .well
   != link_to('New model', path_to.new_model, {class: 'btn'})
