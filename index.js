@@ -27,7 +27,7 @@ exports.templateText = function (name, data) {
     switch (name) {
 
         case 'default_action_view':
-        return 'h1 ' + data.join('#') + '\n';
+        return '.page-header\n  h1 ' + data.join('#') + '\n';
 
         case 'scaffold_form':
         var form = '';
@@ -35,17 +35,18 @@ exports.templateText = function (name, data) {
             switch (property.type) {
                 case 'Boolean':
                 form += [
-                    'p',
+                    '.clearfix',
                     '  != form.checkbox("' + property.name + '")',
-                    '  != form.label("' + property.name + '")',
+                    '  .input',
+                    '    != form.label("' + property.name + '")',
                 ].join('\n') + '\n';
                 break;
                 default:
                 form += [
-                    'p',
+                    '.clearfix',
                     '  != form.label("' + property.name + '")',
-                    '  br',
-                    '  != form.input("' + property.name + '")',
+                    '  .input',
+                    '    != form.input("' + property.name + '")',
                 ].join('\n') + '\n';
             }
         });
