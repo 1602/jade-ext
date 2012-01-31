@@ -40,7 +40,7 @@ exports.templateText = function (name, data) {
         data.forEach(function (property) {
             switch (property.type) {
                 default:
-                fields.push('.field(property=\'' + property.name + '\')= model.' + property.name);
+                fields.push('.field(property=\'' + property.name + '\')= model[\'' + property.name + '\']');
                 break;
             }
         });
