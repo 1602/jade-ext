@@ -1,10 +1,20 @@
+ul.breadcrumb
+    li
+       a(href='/') Home
+       span.divider /
+    li
+       != linkTo('models', pathTo.models)
+       span.divider /
+    li.active
+       a(href='#') New model
+
 .page-header
   h1 New model
 
-- form_for(model, {action: path_to.models, method: 'POST', id: "model_form"}, function (form) {
-  != partial('models/form.jade', {locals: {form: form, model: model}})
-  .actions
-    != form.submit('Create model', {class: 'btn'})
+- formFor(model, {action: pathTo.models, method: 'POST', id: "model_form", class: 'form-horizontal'}, function (form) {
+  != partial('models/form', {locals: {form: form, model: model}})
+  .form-actions
+    != form.submit('<i class="icon-ok icon-white"></i>  Create model', {class: 'btn btn-primary'})
     span= ' or '
-    != link_to('Cancel', path_to.models, {class: 'btn'})
+    != linkTo('Cancel', pathTo.models, {class: 'btn'})
 - });
