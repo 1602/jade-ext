@@ -1,10 +1,20 @@
+ul.breadcrumb
+      li
+        a(href='/') Home
+        span.divider /
+      li
+        != linkTo('models', pathTo.models)
+        span.divider /
+      li.active
+        a(href='#') Edit model
+
 .page-header
   h1 Edit model
 
-- form_for(model, {action: path_to.model(model), method: 'PUT', id: "model_form"}, function (form) {
-  != partial('models/form.jade', {locals: {form: form, model: model}})
-  .actions
-    != form.submit('Update model', {class: 'btn primary'})
+- formFor(model, {action: pathTo.model(model), method: 'PUT', id: "model_form", class: 'form-horizontal'}, function (form) {
+  != partial('models/form', {locals: {form: form, model: model}})
+  .form-actions
+    != form.submit('<i class="icon-ok icon-white"></i> Update model', {class: 'btn btn-primary'})
     span= ' or '
-    != link_to('Cancel', path_to.model(model), {class: 'btn'})
+    != linkTo('Cancel', pathTo.model(model), {class: 'btn'})
 - });

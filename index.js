@@ -40,7 +40,7 @@ exports.templateText = function (name, data) {
         data.forEach(function (property) {
             switch (property.type) {
                 default:
-                fields.push('.field(property=\'' + property.name + '\')= model[\'' + property.name + '\']');
+                fields.push('      tr\n        td ' + property.name + '\n        td\n          != model.' + property.name);
                 break;
             }
         });
@@ -52,17 +52,17 @@ exports.templateText = function (name, data) {
             switch (property.type) {
                 case 'Boolean':
                 form += [
-                    '.clearfix',
-                    '  != form.label("' + property.name + '")',
-                    '  .input',
+                    '.control-group',
+                    '  != form.label("' + property.name + '", false, {class: "control-label"})',
+                    '  .controls',
                     '    != form.checkbox("' + property.name + '")',
                 ].join('\n') + '\n';
                 break;
                 default:
                 form += [
-                    '.clearfix',
-                    '  != form.label("' + property.name + '")',
-                    '  .input',
+                    '.control-group',
+                    '  != form.label("' + property.name + '", false, {class: "control-label"})',
+                    '  .controls',
                     '    != form.input("' + property.name + '")',
                 ].join('\n') + '\n';
             }
