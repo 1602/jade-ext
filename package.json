@@ -1,12 +1,20 @@
 {
   "name": "jade-ext",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Anatoliy C.",
-  "description": "RailwayJS adapter for jade templating engine",
+  "description": "CompoundJS adapter for jade templating engine",
   "main": "index.js",
   "engines": {
     "node": ">= 0.4.0"
   },
+  "contributors": [ {
+    "name": "Anatoliy C.",
+    "email": "mail@anatoliy.in"
+  }, {
+    "name": "Alexey Gordeyev",
+    "email": "agbiggora@gmail.com",
+    "url": "https://github.com/biggora"
+  }],
   "dependencies": {
   },
   "devDependencies": {},
