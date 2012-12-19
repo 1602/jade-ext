@@ -13,10 +13,10 @@ ul.breadcrumb
 
 - var form = formFor(model, {action: pathTo.models, method: 'POST', id: "model_form", class: 'form-horizontal'})
 
-= form.begin()
+!= form.begin()
 != partial('models/form', {locals: {form: form, model: model}})
 .form-actions
   != form.submit('<i class="icon-ok icon-white"></i>  Create model', {class: 'btn btn-primary'})
   span= ' or '
   != linkTo('Cancel', pathTo.models, {class: 'btn'})
-= form.end()
+!= form.end()
