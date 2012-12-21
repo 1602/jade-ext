@@ -1,22 +1,24 @@
 {
   "name": "jade-ext",
-  "version": "0.0.7-1",
+  "version": "0.0.7-2",
   "author": "Anatoliy C.",
   "description": "CompoundJS adapter for jade templating engine",
   "main": "index.js",
   "engines": {
     "node": ">= 0.4.0"
   },
-  "contributors": [ {
-    "name": "Anatoliy C.",
-    "email": "mail@anatoliy.in"
-  }, {
-    "name": "Alexey Gordeyev",
-    "email": "agbiggora@gmail.com",
-    "url": "https://github.com/biggora"
-  }],
-  "dependencies": {
-  },
+  "contributors": [
+    {
+      "name": "Anatoliy C.",
+      "email": "mail@anatoliy.in"
+    },
+    {
+      "name": "Alexey Gordeyev",
+      "email": "agbiggora@gmail.com",
+      "url": "https://github.com/biggora"
+    }
+  ],
+  "dependencies": {},
   "devDependencies": {},
   "repository": {
     "url": ""
