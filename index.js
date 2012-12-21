@@ -1,17 +1,13 @@
 var fs = require('fs');
 
 // monkey patch ejs
-console.log('mokey');
 try {
     var jade = require('jade'), old_parse = jade.Compiler.prototype.compile;
     jade.Compiler.prototype.compile = function () {
         var str = old_parse.apply(this, Array.prototype.slice.call(arguments));
-        console.log(str);
         return 'arguments.callee.buf = buf;' + str;
     };
-    console.log(jade);
 } catch (e) {
-    console.log(e);
     // disregard
 }
 
