@@ -46,7 +46,7 @@ exports.templateText = function (name, data) {
         return fs.readFileSync(exports.template('scaffold_show')).toString().replace('FIELDS', fields.join('\n  '));
 
         case 'scaffold_form':
-        var form = '';
+        var form = '!= errorMessagesFor(model) \n';
         data.forEach(function (property) {
             switch (property.type) {
                 case 'Boolean':
