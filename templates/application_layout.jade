@@ -13,11 +13,11 @@ html
 
     .container
       - var flash = request.flash('info').pop(); if (flash) {
-        .alert-message.info= flash
+        .alert.alert-info= flash
       - }
 
       - flash = request.flash('error').pop(); if (flash) {
-        .alert-message.error= flash
+        .alert.alert-error= flash
       - }
 
       != body
