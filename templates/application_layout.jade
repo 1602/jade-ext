@@ -2,9 +2,9 @@
 html
   head
     title= title
-    != stylesheet_link_tag('bootstrap', 'application', 'bootstrap-responsive')
-    != javascript_include_tag('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', 'rails', 'application')
-    != csrf_meta_tag()
+    != stylesheetLinkTag('bootstrap', 'application', 'bootstrap-responsive')
+    != javascriptIncludeTag('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', 'rails', 'application')
+    != csrfMetaTag()
   body
     .navbar
         .navbar-inner
@@ -25,3 +25,4 @@ html
       hr
       footer
         p © Company 2012
+  != contentFor('javascripts')
