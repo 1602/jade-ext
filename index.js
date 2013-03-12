@@ -39,14 +39,14 @@ exports.templateText = function (name, data) {
         data.forEach(function (property) {
             switch (property.type) {
                 default:
-                fields.push('      tr\n        td ' + property.name + '\n        td\n          != model.' + property.name);
+                fields.push('      tr\n        td ' + property.name + '\n        td\n          != {{ model }}.' + property.name);
                 break;
             }
         });
         return fs.readFileSync(exports.template('scaffold_show')).toString().replace('FIELDS', fields.join('\n  '));
 
         case 'scaffold_form':
-        var form = '!= errorMessagesFor(model) \n';
+        var form = '!= errorMessagesFor({{ model }}) \n';
         data.forEach(function (property) {
             switch (property.type) {
                 case 'Boolean':
