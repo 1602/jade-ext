@@ -1,6 +1,6 @@
 {
   "name": "jade-ext",
-  "version": "0.0.7-8",
+  "version": "0.0.7-9",
   "author": "Anatoliy C.",
   "description": "CompoundJS adapter for jade templating engine",
   "main": "index.js",
