@@ -1,16 +1,5 @@
 var fs = require('fs');
 
-// monkey patch ejs
-try {
-    var jade = require('jade'), old_parse = jade.Compiler.prototype.compile;
-    jade.Compiler.prototype.compile = function () {
-        var str = old_parse.apply(this, Array.prototype.slice.call(arguments));
-        return 'arguments.callee.buf = buf;' + str;
-    };
-} catch (e) {
-    // disregard
-}
-
 /**
  * This extension will be used by default for all template files
  */
